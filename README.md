@@ -1,5 +1,7 @@
 # Throttler
 
+[![Build Status](https://travis-ci.org/gowork/throttler.svg?branch=master)](https://travis-ci.org/gowork/throttler)
+
 Use the throttle to control the speed.
 
 ```php
