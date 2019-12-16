@@ -19,6 +19,21 @@ final class Throttler
         $this->time = $time ?? new Time();
     }
 
+    /**
+     * @template TKey
+     * @template TValue
+     * @phpstan-param iterable<TKey, TValue> $collection
+     * @phpstan-return iterable<TKey, TValue>
+     */
+    public static function iterable(iterable $collection, float $throttleSeconds, ?Time $time = null): iterable
+    {
+        $throttle = new self($throttleSeconds, $time);
+        foreach ($collection as $key => $item) {
+            $throttle->throttle();
+            yield $key => $item;
+        }
+    }
+
     public static function started(float $throttleSeconds, ?Time $time = null): self
     {
         $self = new self($throttleSeconds, $time);

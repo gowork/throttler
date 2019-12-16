@@ -46,4 +46,16 @@ final class ThrottlerTest extends TestCase
         self::assertGreaterThanOrEqual(0.2, $lapTime);
         self::assertLessThan(0.3, $lapTime);
     }
+
+    function test_throttling_iterable()
+    {
+        $throttler = Throttler::iterable([0, 1, 2], 0.1);
+        $start = microtime(true);
+
+        foreach ($throttler as $item) {}
+
+        $lapTime = microtime(true) - $start;
+        self::assertGreaterThanOrEqual(0.2, $lapTime);
+        self::assertLessThan(0.3, $lapTime);
+    }
 }
