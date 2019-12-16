@@ -14,3 +14,15 @@ foreach ($heavyTasks->all() as $task) {
     $task->run();
 }
 ```
+
+Alternative usage for wrapping iterables:
+
+```php
+use GW\Throttler\Throttler;
+
+$throttledTask = Throttler::iterable($heavyTasks->all(), 1.0);
+
+foreach ($throttledTask as $task) {
+    $task->run(); // for each iteration it will sleep one second
+}
+```
