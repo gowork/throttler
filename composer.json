@@ -1,6 +1,7 @@
 {
     "name": "gowork/throttler",
     "description": "Simple PHP execution throttler.",
+    "keywords": ["throttling", "throttle", "execution throttling"],
     "type": "library",
     "license": "MIT",
     "require": {
