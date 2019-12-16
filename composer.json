@@ -1,0 +1,22 @@
+{
+    "name": "gowork/throttler",
+    "description": "Simple PHP throttler.",
+    "type": "library",
+    "license": "MIT",
+    "require": {},
+    "require-dev": {
+        "php": "^7.3",
+        "phpunit/phpunit": "^8.5",
+        "phpstan/phpstan": "^0.12.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "GW\\Throttler\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "tests\\GW\\Throttler\\": "tests/"
+        }
+    }
+}
