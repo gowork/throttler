@@ -12,13 +12,13 @@ class Time
         return microtime(true);
     }
 
-	public function sleep(float $seconds): void
-	{
-		$this->uSleep((int)round($seconds * 1000000));
-	}
+    public function sleep(float $seconds): void
+    {
+        $this->uSleep((int)round($seconds * 1000000));
+    }
 
-	public function uSleep(int $microseconds): void
-	{
-		usleep($microseconds);
-	}
+    public function uSleep(int $microseconds): void
+    {
+        usleep($microseconds);
+    }
 }
